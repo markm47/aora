@@ -1,9 +1,25 @@
-import { ActivityIndicator, Text, View } from 'react-native';
+import { View, ActivityIndicator, Dimensions, Platform } from "react-native";
 
-export default function Loader() {
+const Loader = ({ isLoading }) => {
+
+  const osName = Platform.OS;
+  const screenHeight = Dimensions.get("screen").height;
+
+  if (!isLoading) return null;
+
   return (
-    <>
-      <ActivityIndicator />
-    </>
+    <View
+      className="absolute flex justify-center items-center w-full h-full bg-primary/60 z-10"
+      style={{
+        height: screenHeight,
+      }}>
+      <ActivityIndicator
+        color="#ffffff"
+        animating={isLoading}
+        size={osName === "ios" ? "large" : 50}
+      />
+    </View>
   );
-}
+};
+
+export default Loader;
