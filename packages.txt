@@ -1,0 +1,4 @@
+
+npx expo install expo-av expo-constants expo-device expo-document-picker expo-font expo-linking expo-router
+
+npm i react-native-animatable react-native-appwrite react-native-gesture-handler react-native-reanimated react-native-safe-area-context react-native-screens react-native-url-polyfill
